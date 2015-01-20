@@ -76,10 +76,8 @@ set softtabstop=4
 set number
 
 "show tabs and tailing whitespace
-set listchars=tab:»·,trail:·
+set listchars=tab:>-,trail:-
 set list
-hi SpecialKey ctermbg=red ctermfg=red guibg=red guifg=red
-
 
 "Ultisnip conf
 let g:snips_author = "Sydney Moutia <sydney@akhann.com>"
