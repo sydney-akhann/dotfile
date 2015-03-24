@@ -83,3 +83,6 @@ hi SpecialKey ctermbg=red ctermfg=red guibg=red guifg=red
 
 "Ultisnip conf
 let g:snips_author = "Sydney Moutia <sydney@akhann.com>"
+
+" Simple commands to remove unwanted whitespace
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
