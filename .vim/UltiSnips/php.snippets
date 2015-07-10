@@ -23,6 +23,10 @@ def pathToNamespace(path):
 
 endglobal
 
+snippet arr "Array"
+array("${1:key}" => ${2:$$1},${0})
+endsnippet
+
 snippet class "Class file" !
 <?php
 
@@ -46,4 +50,31 @@ public function ${1:method}(${2:$dependencies})
 {
     ${3://code...}
 }
+endsnippet
+
+snippet : "array item"
+"${1:key}" => ${2:$$1},$0
+endsnippet
+
+snippet gar "php class getter and and remove collection"
+/*
+ * Getter for $1
+ */
+public function get${1/\w+\s*/\u$0/}()
+{
+	return $this->$1;$2
+}
+
+/*
+ * Add $3
+ */
+public function add${3/\w+\s*/\u$0/}(${3/\w+\s*/\u$0/} $$3)
+{
+    $this->$1->add($$3);
+}
+$0
+endsnippet
+
+snippet 404
+throw $this->createNotFoundException('The ${1:product} does not exist');
 endsnippet

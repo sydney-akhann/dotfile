@@ -1,0 +1,16 @@
+snippet o2m
+<one-to-many field="${1:features}" target-entity="${2:Feature}" mapped-by="${3:product}">
+    <cascade>
+        <cascade-persist/>
+    </cascade>
+    <order-by>
+        <order-by-field name="${4:number}" direction="${5:ASC}" />
+    </order-by>$0
+</one-to-many>
+endsnippet
+
+snippet m2o
+<many-to-one field="${1:product}" target-entity="${2:Product}" inversed-by="${3:features}">
+    <join-column name="${4:product_id}" referenced-column-name="${5:id}" />
+</many-to-one>
+endsnippet
