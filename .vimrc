@@ -37,6 +37,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'kana/vim-operator-user'
+Plugin 'tyru/operator-camelize.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,3 +89,7 @@ let g:snips_author = "Sydney Moutia <sydney@akhann.com>"
 
 " Simple commands to remove unwanted whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+"Camelize and Decamelize
+map <Leader>c <Plug>(operator-camelize)
+map <Leader>C <Plug>(operator-decamelize)
