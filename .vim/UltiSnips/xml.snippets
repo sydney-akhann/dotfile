@@ -14,3 +14,11 @@ snippet m2o
     <join-column name="${4:product_id}" referenced-column-name="${5:id}" />
 </many-to-one>
 endsnippet
+
+snippet o2o
+<one-to-one field="${1:customer}" target-entity="${2:Customer}" inversed-by="${3:cart}">
+    <join-column name="${4:customer_id}" referenced-column-name="${5:id}" />
+</one-to-one>
+endsnippet
+
+
