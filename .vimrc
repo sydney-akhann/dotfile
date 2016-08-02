@@ -93,3 +93,10 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "Camelize and Decamelize
 map <Leader>c <Plug>(operator-camelize)
 map <Leader>C <Plug>(operator-decamelize)
+
+" Disable annoying beeping
+set noerrorbells
+set vb t_vb=
+autocmd GUIEnter * set vb t_vb=
+
+set colorcolumn=80
