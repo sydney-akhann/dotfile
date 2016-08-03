@@ -21,10 +21,6 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/syntastic'
 
-Plugin 'SirVer/ultisnips'
-
-Plugin 'honza/vim-snippets'
-
 "Plugin 'lunaru/vim-twig'
 Plugin 'evidens/vim-twig'
 
@@ -56,10 +52,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set background=dark
-if has('gui_running') 
+if has('gui_running')
   colorscheme solarized
+  Plugin 'SirVer/ultisnips'
+  Plugin 'honza/vim-snippets'
 else 
-  colorscheme railscasts 
+  colorscheme railscasts
 endif 
 
 set hlsearch
