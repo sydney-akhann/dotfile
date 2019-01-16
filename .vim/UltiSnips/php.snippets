@@ -78,3 +78,11 @@ endsnippet
 snippet 404
 throw $this->createNotFoundException('The ${1:product} does not exist');
 endsnippet
+
+snippet @var
+/**
+ * @var ${2:mixed} ${1:$variable}
+ */
+${3:protected} $1;
+$0
+endsnippet

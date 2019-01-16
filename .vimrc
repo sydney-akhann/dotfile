@@ -7,6 +7,21 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"Color Schema
+"Plugin 'dracula/vim'
+"Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'morhetz/gruvbox'
+
+"Python
+Plugin 'powerline/powerline'
+Plugin 'python-mode/python-mode'
+
+
+"Status bar
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'HerringtonDarkholme/yats.vim'
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -22,7 +37,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 
 "Plugin 'lunaru/vim-twig'
+
 Plugin 'evidens/vim-twig'
+
+Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -51,9 +70,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"Automatic reloading .vimrc
+autocmd! bufwritepost .vimrc source %
+
 set background=dark
 if has('gui_running')
-  colorscheme solarized
+  "colorscheme solarized
+  colorscheme gruvbox
   Plugin 'SirVer/ultisnips'
   Plugin 'honza/vim-snippets'
 else 
@@ -85,6 +108,10 @@ set list
 "Ultisnip conf
 let g:snips_author = "Sydney Moutia <sydney@akhann.com>"
 
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
 " Simple commands to remove unwanted whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
@@ -98,3 +125,17 @@ set vb t_vb=
 autocmd GUIEnter * set vb t_vb=
 
 set colorcolumn=80
+
+let g:ctrlp_max_files=0
+
+let g:go_version_warning = 0
+
+nmap ,cs :let @*=expand("%")<CR>
+nmap ,cl :let @*=expand("%:p")<CR>
+inoremap <C-space> <C-x><C-o>
+
+"Highlight
+"autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+"NERDtree
+map <Leader>ns :NERDTreeToggle<CR>
